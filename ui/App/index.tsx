@@ -6,11 +6,17 @@
  */
 
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text} from 'react-native';
+import {Button, SafeAreaView, StyleSheet, Text} from 'react-native';
+import settings from '../../navigation/settings';
 
-function App(): JSX.Element {
+export type AppProps = {
+  componentId: string;
+};
+
+function App({componentId}: AppProps): JSX.Element {
   return (
     <SafeAreaView>
+      <Button title="settings" onPress={() => settings(componentId)} />
       <Text style={styles.text}>The main app, happy listening</Text>
     </SafeAreaView>
   );
